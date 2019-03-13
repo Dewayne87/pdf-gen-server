@@ -191,7 +191,102 @@ module.exports = (file) => {
       </h3>
     </div>
     <div class="page">
-      <h1>Hello this is a test</h1>
+      <table>
+        <tr>
+          <td>
+            <table class="invoice-header">
+              <tr>
+                <td class="logo">
+                  Logo
+                </td>
+                <td>
+                  <table class="invoice-dates">
+                    <tr>
+                      <td>Invoice #: 123456</td>
+                    </tr>
+                    <tr>
+                      <td>Date: 03/12/2019</td>
+                    </tr>
+                    <tr>
+                      <td>Due Date: 04/11/2019</td>
+                    </tr>
+                    <tr>
+                      <td>Amount Due: $105.56</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class="invoice-addresses">
+              <tr>
+                <td class="invoice-address">
+                  <strong class="address-frto">From: </strong><br />
+                  Happy Inc.<br />
+                  123 Happy St. <br />
+                  Atlanta, GA 30075
+                </td>
+                <td class="invoice-address">
+                  <strong class="address-frto">To: </strong><br />
+                  Happy Inc.<br />
+                  123 Happy St. <br />
+                  Atlanta, GA 30075
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class="invoice-money" cellspacing="0">
+              <tr>
+                <td>Subtotal:</td>
+                <td>$105.00</td>
+              </tr>
+              <tr>
+                <td>Discount:</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Tax:</td>
+                <td>7%</td>
+              </tr>
+              <tr>
+                <td>Shipping:</td>
+                <td>$2.99</td>
+              </tr>
+              <tr id="total-due">
+                <td>Total:</td>
+                <td>105.56</td>
+              </tr>
+              <tr id="amount-paid">
+                <td>Amount Paid:</td>
+                <td>0.00</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="invoice-terms">
+              <h3>Terms of Services</h3>
+              <p>
+                Net 30 terms are for business customers only. Requests for Net
+                30 terms will be reviewed and approved by the Company. Net 30
+                terms are not guaranteed to all businesses.
+              </p>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <h3 class="invoice-next-page">
+        *** Please look on the next page for an Itemized list of your invoice.
+        ***
+      </h3>
     </div>
   </body>
 </html>
