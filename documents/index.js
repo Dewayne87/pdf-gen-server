@@ -32,7 +32,7 @@ module.exports = (file) => {
       .invoice-dates {
         width: 100%;
         text-align: right;
-        font-size: 24px;
+        font-size: 20px;
       }
       .invoice-addresses {
         width: 100%;
@@ -43,10 +43,10 @@ module.exports = (file) => {
       .invoice-address {
         padding: 30px;
         line-height: 1.3;
-        font-size: 20px;
+        font-size: 16px;
       }
       .invoice-address .address-frto {
-        font-size: 24px;
+        font-size: 20px;
       }
       .page td .invoice-money {
         text-align: right;
@@ -55,7 +55,7 @@ module.exports = (file) => {
       }
       .page td .invoice-money tr {
         line-height: 1.3;
-        font-size: 20px;
+        font-size: 16px;
       }
       .page td .invoice-money tr:nth-child(even) {
         background: lightgray;
@@ -71,11 +71,11 @@ module.exports = (file) => {
       }
       .invoice-terms {
         width: 600px;
-        font-size: 24px;
+        font-size: 20px;
         margin-top: 20px;
       }
       .invoice-terms p {
-        font-size: 20px;
+        font-size: 16px;
       }
       #total-due {
         background: rgb(224, 123, 105);
