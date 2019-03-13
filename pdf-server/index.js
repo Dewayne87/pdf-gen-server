@@ -23,3 +23,7 @@ SERVER.get("/fetch-pdf", (req, res) => {
 SERVER.listen(() => {
   console.log(`Listening on PORT:${PORT}`);
 });
+
+SERVER.get('/', (req,res) => {
+  res.json({message: "Running"})
+})
