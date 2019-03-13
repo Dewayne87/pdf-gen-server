@@ -16,7 +16,6 @@ module.exports = (file) => {
         height: 8in;
         width: 95%;
         position: relative;
-        padding: 20px 0;
         margin: 30px 20px;
       }
       .page table {
