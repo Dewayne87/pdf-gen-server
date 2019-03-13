@@ -4,7 +4,7 @@ const express = require("express"),
   cors = require("cors"),
   logger = require("morgan"),
   helmet = require("helmet"),
-  PORT = process.env.PORT || 5001;
+  PORT = process.env.PORT;
 
 SERVER.use(cors(), logger("dev"), helmet());
 // add a route for pdf creation
