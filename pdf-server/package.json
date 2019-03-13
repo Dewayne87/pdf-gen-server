@@ -1,0 +1,19 @@
+{
+  "name": "pdf-server",
+  "version": "1.0.0",
+  "description": "Server specific for pdf creation",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch --verbose",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "html-pdf": "^2.2.0",
+    "morgan": "^1.9.1"
+  }
+}
