@@ -22,6 +22,9 @@ module.exports = (file) => {
       .page table {
         width: 100%;
       }
+      .page .logo {
+        width: 150px;
+      }
       .invoice-header {
         width: 100%;
         padding-bottom: 40px;
@@ -51,7 +54,7 @@ module.exports = (file) => {
       .page td .invoice-money {
         text-align: right;
         margin-left: auto;
-        width: 300px;
+        width: 200px;
       }
       .page td .invoice-money tr {
         line-height: 1.3;
@@ -70,7 +73,7 @@ module.exports = (file) => {
         width: 100%;
       }
       .invoice-terms {
-        width: 600px;
+        width: 80%;
         font-size: 20px;
         margin-top: 20px;
       }
