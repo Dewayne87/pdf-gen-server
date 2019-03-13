@@ -1,6 +1,9 @@
 module.exports = (file) => {
-  const today = new Date();
-  const dueDate = new Date(today.setDate(today.getDate() + 30));
+  const currentDay = new Date();
+  const dueDate = new Date(currentDay.setDate(currentDay.getDate() + 30));
+  const dueDateDate = dueDate.getDate();
+  const dueDateMonth = dueDate.getMonth();
+  const dueDateYear = dueDate.getFullYear();
   const items = file.invoiceItems.map(row => {
     const { item, quantity, rate, amount} = row;
     return (
@@ -122,16 +125,16 @@ module.exports = (file) => {
                 <td>
                   <table class="invoice-dates">
                     <tr>
-                      <td>Invoice #: 123456</td>
+                      <td>Invoice #: ${file.invoiceNumber}</td>
                     </tr>
                     <tr>
-                      <td>Date: 03/12/2019</td>
+                      <td>Date: ${currentDay.getMonth()}/${currentDay.getDate()}/${currentDay.getFullYear()}</td>
                     </tr>
                     <tr>
-                      <td>Due Date: 04/11/2019</td>
+                      <td>Due Date: ${dueDateMonth}/${dueDateDate}/${dueDateYear}</td>
                     </tr>
                     <tr>
-                      <td>Amount Due: $105.56</td>
+                      <td>Balance Due: $${file.balanceDue}</td>
                     </tr>
                   </table>
                 </td>
@@ -164,27 +167,27 @@ module.exports = (file) => {
             <table class="invoice-money" cellspacing="0">
               <tr>
                 <td>Subtotal:</td>
-                <td>$105.00</td>
+                <td>$${file.subtotal}</td>
               </tr>
               <tr>
                 <td>Discount:</td>
-                <td>0</td>
+                <td>${file.discount}</td>
               </tr>
               <tr>
                 <td>Tax:</td>
-                <td>7%</td>
+                <td>${file.tax}</td>
               </tr>
               <tr>
                 <td>Shipping:</td>
-                <td>$2.99</td>
+                <td>$${file.shipping}</td>
               </tr>
               <tr id="total-due">
                 <td>Total:</td>
-                <td>105.56</td>
+                <td>$${file.total}</td>
               </tr>
               <tr id="amount-paid">
                 <td>Amount Paid:</td>
-                <td>0.00</td>
+                <td>$${file.amountPaid}</td>
               </tr>
             </table>
           </td>
