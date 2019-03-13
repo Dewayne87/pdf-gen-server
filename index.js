@@ -4,9 +4,10 @@ const express = require("express"),
   cors = require("cors"),
   logger = require("morgan"),
   helmet = require("helmet"),
-  PORT = process.env.PORT;
+  PORT = process.env.PORT,
+  pdf = require('html-pdf');
 
-SERVER.use(cors(), logger("dev"), helmet());
+SERVER.use(express.json(), cors(), logger("dev"), helmet());
 // add a route for pdf creation
 SERVER.post("/create-pdf", (req, res) => {
   const file = req.body;
@@ -21,10 +22,11 @@ SERVER.post("/create-pdf", (req, res) => {
 SERVER.get("/fetch-pdf", (req, res) => {
   res.sendFile(`${__dirname}/documents/result.pdf`);
 });
-SERVER.listen(() => {
-  console.log(`Listening on PORT:${PORT}`);
-});
 
 SERVER.get('/', (req,res) => {
   res.json({message: "Running"})
 })
+
+SERVER.listen(() => {
+  console.log(`Listening on PORT:${PORT}`);
+});
