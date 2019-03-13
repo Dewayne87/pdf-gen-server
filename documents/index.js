@@ -1,13 +1,14 @@
 module.exports = (file) => {
   const today = new Date();
   const dueDate = new Date(today.setDate(today.getDate() + 30));
-  const items = file.invoiceItems.map(item => {
+  const items = file.invoiceItems.map(row => {
+    const { item, quantity, rate, amount} = row;
     return (
-      `<tr>
-        <td>${item.item}</td>
-        <td>${item.quantity}</td>
-        <td>${item.rate}</td>
-        <td>${item.amount}</td>
+      `<tr class='invoice-item'>
+        <td>${item}</td>
+        <td>${quantity}</td>
+        <td>${rate}</td>
+        <td>${amount}</td>
       </tr>`
     )
   })
@@ -98,6 +99,13 @@ module.exports = (file) => {
       }
       #amount-paid {
         background: rgb(145, 195, 149);
+      }
+      .invoice-items {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .invoice-items .invoice-item{
+        border: 1px solid black;
       }
     </style>
   </head>
@@ -231,19 +239,19 @@ module.exports = (file) => {
         </tr>
         <tr>
           <td>
-            <div class="invoice-terms">
               <h3>Itemized Summary</h3>
-              <table>
-                <th>
-                  <td>Item</td>
-                  <td>Quantity</td>
-                  <td>Rate</td>
-                  <td>Amount</td>
-                </th>
-                ${items}
-              </table>
-            </div>
           </td>
+        </tr>
+        <tr>
+            <table class='invoice-items' cellspacing="0">
+              <tr>
+                <td>Item</td>
+                <td>Quantity</td>
+                <td>Rate</td>
+                <td>Amount</td>
+            </tr>
+              ${items.join()}
+            </table>
         </tr>
       </table>
     </div>
