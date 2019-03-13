@@ -12,7 +12,8 @@ SERVER.use(express.json(), cors(), helmet(),logger("dev"));
 // add a route for pdf creation
 SERVER.post("/create-pdf", (req, res) => {
   const file = req.body;
-  pdf.create(pdfTemplate(file), {}).toFile("documents/result.pdf", err => {
+  const options = {format: 'A4'}
+  pdf.create(pdfTemplate(file, options), {}).toFile("documents/result.pdf", err => {
     if (err) {
       res.send(err);
     } else res.send(Promise.resolve());

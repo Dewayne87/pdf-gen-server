@@ -27,7 +27,7 @@ module.exports = (file) => {
       }
       .invoice-header {
         width: 100%;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
       }
       .invoice-header .logo {
         vertical-align: top;
@@ -35,7 +35,7 @@ module.exports = (file) => {
       .invoice-dates {
         width: 100%;
         text-align: right;
-        font-size: 20px;
+        font-size: 16px;
       }
       .invoice-addresses {
         width: 100%;
@@ -67,15 +67,17 @@ module.exports = (file) => {
         padding: 3px;
       }
       .page .invoice-next-page {
+        font-size: 16px;
         position: absolute;
         bottom: 0;
         text-align: center;
         width: 100%;
       }
       .invoice-terms {
-        width: 80%;
-        font-size: 20px;
-        margin-top: 20px;
+        width: 100%;
+        font-size: 16px;
+        padding-top: 20px;
+        border-top: 1px solid black;
       }
       .invoice-terms p {
         font-size: 16px;
