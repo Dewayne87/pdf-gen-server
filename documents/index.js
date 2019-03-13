@@ -11,7 +11,7 @@ module.exports = (file) => {
       </tr>`
     )
   })
-  
+
   return `
   <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -234,6 +234,12 @@ module.exports = (file) => {
             <div class="invoice-terms">
               <h3>Itemized Summary</h3>
               <table>
+                <th>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                  <td>Rate</td>
+                  <td>Amount</td>
+                </th>
                 ${items}
               </table>
             </div>
