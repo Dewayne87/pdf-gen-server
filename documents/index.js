@@ -13,7 +13,6 @@ module.exports = (file) => {
         margin: 0;
       }
       .page {
-        height: 11.245in;
         width: 95%;
         position: relative;
         padding: 20px 0;
