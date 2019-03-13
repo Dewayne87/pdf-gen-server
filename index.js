@@ -1,13 +1,14 @@
 require('dotenv').config();
-const express = require("express"),
-  SERVER = express(),
-  cors = require("cors"),
-  logger = require("morgan"),
-  helmet = require("helmet"),
-  PORT = process.env.PORT,
-  pdf = require('html-pdf');
+  const express = require('express');
+  const logger = require('morgan');
+  const helmet = require('helmet');
+  const cors = require('cors');
+  const pdf = require('module');
+  const pdfTemplate = require('./documents');
+  const SERVER = express();
+  const PORT = process.env.PORT || 5000
 
-SERVER.use(express.json(), cors(), logger("dev"), helmet());
+SERVER.use(express.json(), cors(), helmet(),logger("dev"));
 // add a route for pdf creation
 SERVER.post("/create-pdf", (req, res) => {
   const file = req.body;
@@ -27,6 +28,6 @@ SERVER.get('/', (req,res) => {
   res.json({message: "Running"})
 })
 
-SERVER.listen(() => {
+SERVER.listen(PORT,() => {
   console.log(`Listening on PORT:${PORT}`);
 });
