@@ -13,10 +13,11 @@ module.exports = (file) => {
         margin: 0;
       }
       .page {
+        height: 9in;
         width: 95%;
         position: relative;
         padding: 20px 0;
-        margin: 0 auto;
+        margin: 30px 20px;
       }
       .page table {
         width: 100%;
