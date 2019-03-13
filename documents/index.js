@@ -1,6 +1,17 @@
 module.exports = (file) => {
   const today = new Date();
   const dueDate = new Date(today.setDate(today.getDate() + 30));
+  const items = file.invoiceItems.map(item => {
+    return (
+      `<tr>
+        <td>${item.item}</td>
+        <td>${item.quantity}</td>
+        <td>${item.rate}</td>
+        <td>${item.amount}</td>
+      </tr>`
+    )
+  })
+  
   return `
   <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -220,72 +231,15 @@ module.exports = (file) => {
         </tr>
         <tr>
           <td>
-            <table class="invoice-addresses">
-              <tr>
-                <td class="invoice-address">
-                  <strong class="address-frto">From: </strong><br />
-                  Happy Inc.<br />
-                  123 Happy St. <br />
-                  Atlanta, GA 30075
-                </td>
-                <td class="invoice-address">
-                  <strong class="address-frto">To: </strong><br />
-                  Happy Inc.<br />
-                  123 Happy St. <br />
-                  Atlanta, GA 30075
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <table class="invoice-money" cellspacing="0">
-              <tr>
-                <td>Subtotal:</td>
-                <td>$105.00</td>
-              </tr>
-              <tr>
-                <td>Discount:</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Tax:</td>
-                <td>7%</td>
-              </tr>
-              <tr>
-                <td>Shipping:</td>
-                <td>$2.99</td>
-              </tr>
-              <tr id="total-due">
-                <td>Total:</td>
-                <td>105.56</td>
-              </tr>
-              <tr id="amount-paid">
-                <td>Amount Paid:</td>
-                <td>0.00</td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td>
             <div class="invoice-terms">
-              <h3>Terms of Services</h3>
-              <p>
-                Net 30 terms are for business customers only. Requests for Net
-                30 terms will be reviewed and approved by the Company. Net 30
-                terms are not guaranteed to all businesses.
-              </p>
+              <h3>Itemized Summary</h3>
+              <table>
+                ${items}
+              </table>
             </div>
           </td>
         </tr>
       </table>
-
-      <h3 class="invoice-next-page">
-        *** Please look on the next page for an Itemized list of your invoice.
-        ***
-      </h3>
     </div>
   </body>
 </html>
