@@ -1,8 +1,6 @@
-module.exports = ({ ...file }) => {
+module.exports = (file) => {
   const today = new Date();
   const dueDate = new Date(today.setDate(today.getDate() + 30));
-  const toAddress = file.addressTo.split("\n");
-  const fromAddress = file.addressFrom.split("\n");
   return `
   <!DOCTYPE html>
 <html lang="en" dir="ltr">

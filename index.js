@@ -3,7 +3,7 @@ require('dotenv').config();
   const logger = require('morgan');
   const helmet = require('helmet');
   const cors = require('cors');
-  const pdf = require('module');
+  const pdf = require('html-pdf');
   const pdfTemplate = require('./documents');
   const SERVER = express();
   const PORT = process.env.PORT || 5000
@@ -14,7 +14,7 @@ SERVER.post("/create-pdf", (req, res) => {
   const file = req.body;
   pdf.create(pdfTemplate(file), {}).toFile("documents/result.pdf", err => {
     if (err) {
-      res.send(Promise.reject());
+      res.send(err);
     } else res.send(Promise.resolve());
   });
 });
